@@ -1,5 +1,45 @@
 # SocialLogin
 
+In Android MainActivity.java
+
+```
+package com.socialloginpuc.app;
+
+import android.os.Bundle;
+
+import com.getcapacitor.BridgeActivity;
+import com.codetrixstudio.capacitor.GoogleAuth.GoogleAuth;
+public class MainActivity extends BridgeActivity {
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    registerPlugin(GoogleAuth.class);
+  }
+}
+
+```
+
+```
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.googleloginpoc.app',
+  appName: 'social-login',
+  webDir: 'dist/browser',
+  plugins: {
+    GoogleAuth: {
+      scopes: ['profile', 'email'],
+      serverClientId:
+        '1062490294243-06pj5bnamd140l3ji0vjaqmnen7p7hko.apps.googleusercontent.com',
+      forceCodeForRefreshToken: true,
+    },
+  },
+};
+
+export default config;
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
 
 ## Development server
