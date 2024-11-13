@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-between" *ngIf="response">
+  <a class="navbar-brand">{{ response.name }}</a>
+  <img class="img-fluid" src="{{ response.picture }}" alt="" />
+  <button class="btn btn-primary" (click)="signout()">Signout</button>
+</div>
